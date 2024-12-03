@@ -32,7 +32,7 @@ def parse_configs() -> dict[str, dict[str, Any]]:
     for name, path in paths.configs.items():
         logger.info("解析配置: %s", name)
         configs[name] = {"path": path, "name": name}
-        k_config_path = os.path.join(path, "OpenWrt")
+        k_config_path = os.path.join(path, "OpenWrt-k")
         if not os.path.isdir(k_config_path):
             msg = f"未找到配置{name}的openwrt文件夹: {k_config_path}"
             raise NotADirectoryError(msg)
